@@ -1,0 +1,33 @@
+import random
+
+def start_game():
+    # Welcome message
+    print("Welcome to the highly addictive and fun game!")
+    print("In this game, you will be given a random number between 1 and 10.")
+    print("Your goal is to guess the number in as few attempts as possible.")
+    
+    # Generate a random number between 1 and 10
+    secret_num = random.randint(1, 10)
+    
+    # Initialize the number of guesses
+    num_guesses = 0
+    
+    # Start the game loop
+    while True:
+        # Prompt the user to guess the number
+        guess = input("Guess the number: ")
+        
+        # Increment the number of guesses
+        num_guesses += 1
+        
+        # Check if the guess is correct
+        if guess == secret_num:
+            # If the guess is correct, print a winning message and exit the game loop
+            print("You guessed the number in {} attempts!".format(num_guesses))
+            break
+        else:
+            # If the guess is incorrect, print a message to try again
+            print("Incorrect. Please try again.")
+
+# Start the game
+start_game()
